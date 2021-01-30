@@ -21,7 +21,6 @@ public class CameraController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, target.position - transform.position, out hit, Mathf.Infinity, layerMask))
         {
-            Debug.Log("Did hit: " + hit.collider.GetComponentInParent<Renderer>().material);
             hit.collider.gameObject.GetComponent<ObjectShading>().fade();
         }
     }
