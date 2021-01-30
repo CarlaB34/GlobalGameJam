@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class AltereDetectState : State
 {
-    private Player m_Player;
-    private float m_DistanceOneRange;
-    private float m_DistanceTwoRange;
+    private Player m_Player = null;
+    private float m_DistanceOneRange = 0f;
+    private float m_DistanceTwoRange = 0f;
+
     public AltereDetectState(Player p_Player, float m_Distance)
     {
          m_Player = p_Player;
+       
     }
 
     public override void OnStateUpdate(FSM p_FSM, GameObject p_Obj, float p_DeltaTime)
     {
+       
         if (Vector3.Distance(p_Obj.transform.position, m_Player.transform.position) < m_DistanceOneRange)
         {
             Debug.Log("dist 1");
            
-
-          
         }
 
 
@@ -32,4 +33,6 @@ public class AltereDetectState : State
           //  Debug.Log(m_DistanceSecur);
         }
     }
+
+    
 }

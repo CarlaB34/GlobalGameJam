@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class AlterEntity : MonoBehaviour
@@ -10,11 +11,12 @@ public class AlterEntity : MonoBehaviour
     [SerializeField]
     private float m_AttackSpeed = 6f;
 
+    private float m_LifeAltere = 5;
     [SerializeField]
     private Transform[] m_PatrolPoints = { };
 
     private List<GameObject> m_ObjtRamasserPassif = null;
-
+    private Transform m_PointerCompass;
     [SerializeField]
     private Player m_Player = null;
 
@@ -32,9 +34,10 @@ public class AlterEntity : MonoBehaviour
         get { return m_PatrolSpeed; }
         set { m_PatrolSpeed = value; }
     }
+   
     private void Awake()
     {
-
+        m_FSM = new FSM();
         m_FSM.SetParameter("isPatrolling", false);
         m_FSM.SetParameter("seePlayer", false);
         m_FSM.SetParameter("AttackPlayer", false);
@@ -79,4 +82,5 @@ public class AlterEntity : MonoBehaviour
 
         
     }
+   
 }
