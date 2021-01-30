@@ -2,32 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolAltere : MonoBehaviour
+public class PatrolAltere : State
 {
-    [SerializeField]
-    private float m_Speed = 5;
-    [SerializeField]
-    private Transform[] m_PointPatrol = { };
 
-    private Vector3 m_Target;
-    private float m_DistancePoint = 0.5f;
+    private const float ARRIVAL_DISTANCE = 0.5f;
+    private Transform[] m_PatrolPoints = { };
+    private float m_MovementSpeed = 0f;
 
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 m_CurrentTarget = Vector3.zero;
+
+    public PatrolAltere(Transform[] _PatrolPoints, float _MovementSpeed)
     {
-        m_Target = m_PointPatrol[Random.Range(0, m_PointPatrol.Length)].position;
+        m_PatrolPoints = _PatrolPoints;
+        m_MovementSpeed = _MovementSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnStateEnter(FSM p_FSM, GameObject p_Obj)
     {
-        if(Vector3.Distance(transform.position, m_Target)<  m_DistancePoint)
+        Debug.Log("ENTER " + nameof(PatrolAltere));
+        m_CurrentTarget = m_PatrolPoints[Random.Range(0, m_PatrolPoints.Length)].position;
+    }
+
+    public override void OnStateUpdate(FSM p_FSM, GameObject p_Obj, float p_DeltaTime)
+    {
+        if (Vector3.Distance(p_Obj.transform.position, m_CurrentTarget) <= ARRIVAL_DISTANCE)
         {
-            m_Target = m_PointPatrol[Random.Range(0, m_PointPatrol.Length)].position;
+            m_CurrentTarget = m_PatrolPoints[Random.Range(0, m_PatrolPoints.Length)].position;
         }
 
-        Vector3 toTarget = m_Target - transform.position;
+        Vector3 toTarget = m_CurrentTarget - p_Obj.transform.position;
         toTarget.Normalize();
-       transform.position += toTarget * m_Speed * Time.deltaTime;
+        p_Obj.transform.position += toTarget * m_MovementSpeed * p_DeltaTime;
     }
+
+
 }
