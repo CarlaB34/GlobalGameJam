@@ -4,28 +4,35 @@ using UnityEngine;
 
 public class PointerEgo : MonoBehaviour
 {
-
+    [SerializeField, Min(.05f)]
+    [Tooltip("Defines how far this entity can detect objects")]
+    private float m_SightSecondRange = 8f;
     //[SerializeField]
     //private Vector3 m_DirCompass;
 
     [SerializeField]
     private Transform m_Player;
+
     [SerializeField]
-    private Transform m_Compass;
-    private float m_TurnRate;
+    private Transform m_Sprite;
+ 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Sprite.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 l_Target = m_Player.position - transform.position;
-        float l_AngleTarget = Vector3.Angle(m_Compass.transform.forward, l_Target);
-        Vector3 l_TurnAxis = Vector3.Cross(m_Compass.transform.position, l_Target);
-
-        transform.RotateAround(m_Compass.transform.position, l_TurnAxis, Time.deltaTime * m_TurnRate * l_AngleTarget);
+        if(Vector3.Distance(m_Player.transform.position, transform.position)< m_SightSecondRange)
+        {
+            m_Sprite.gameObject.SetActive(true);
+            transform.LookAt(m_Player.transform.position);
+        }
+        else
+        {
+            m_Sprite.gameObject.SetActive(false);
+        }
     }
 }
