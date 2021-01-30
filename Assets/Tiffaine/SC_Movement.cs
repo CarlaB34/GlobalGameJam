@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SC_Movement : MonoBehaviour
 {
-    public CharacterController controller;
+    public Vector3 controller;
+    public CharacterController controllerCharacter;
     public float speed = 6f;
 
     public float turnsmoothtime = 0.1f;
@@ -35,10 +36,10 @@ public class SC_Movement : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z)*Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
 
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnsmoothvelocity, turnsmoothtime);
+           float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, 0, ref turnsmoothvelocity, turnsmoothtime);
 
-            controller.Move(direction * speed * Time.deltaTime);
-
+            controllerCharacter.Move(direction * speed * Time.deltaTime);
+          //  transform.position += controller * speed * Time.deltaTime;
         }
 
 
