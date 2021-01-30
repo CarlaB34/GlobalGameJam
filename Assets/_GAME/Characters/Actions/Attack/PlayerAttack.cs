@@ -17,6 +17,9 @@ public class PlayerAttack : MonoBehaviour
     private float ShieldDuration = 0f;
     private float ShieldActualCd = 0f;
 
+    [SerializeField]
+    private GameObject shield;
+
 
     private EnemyDetection m_detection;
 
@@ -35,6 +38,7 @@ public class PlayerAttack : MonoBehaviour
             }
             else
             {
+                shield.SetActive(false);
                 isShielded = false;
                 ShieldDuration = 0;
                 ShieldActualCd = ShieldCd;
@@ -71,6 +75,7 @@ public class PlayerAttack : MonoBehaviour
         if(ShieldActualCd <= 0)
         {
             Debug.Log("block");
+            shield.SetActive(true);
             isShielded = true;
         }
     }
