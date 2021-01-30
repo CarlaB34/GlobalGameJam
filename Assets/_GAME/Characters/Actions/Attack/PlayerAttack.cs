@@ -59,7 +59,9 @@ public class PlayerAttack : MonoBehaviour
             if (m_detection.HasActionnableInRange())
             {
                 Debug.Log("Attack");
-                //m_detection.GetActionnableInRange().GetComponent<Actions>().perform();
+                GameObject enemy = m_detection.GetActionnableInRange();
+                enemy.GetComponent<EnemyController>().Damage(GlobalVars.PlayerDamages);
+                enemy.transform.GetComponent<Rigidbody>().AddForce((enemy.transform.position - transform.position) * 3, ForceMode.Impulse);
             }
         }        
     }
@@ -70,6 +72,17 @@ public class PlayerAttack : MonoBehaviour
         {
             Debug.Log("block");
             isShielded = true;
+        }
+    }
+
+    /**
+     * Damages taken
+     */
+    public void Damage(int amout)
+    {
+        if (!isShielded)
+        {
+            GlobalVars.PlayerHP -= amout;
         }
     }
 }

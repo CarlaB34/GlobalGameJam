@@ -14,11 +14,9 @@ public class PlayerCollect : MonoBehaviour
 
     public void OnInteract()
     {
-        Debug.Log("collect1");
         if (m_detection.HasActionnableInRange())
         {
-            Debug.Log("collect2");
-            //m_detection.GetActionnableInRange().GetComponent<Actions>().perform();
+            m_detection.GetActionnableInRange().GetComponent<CollectibleController>().Collect(); ;
         }
     }
 }
