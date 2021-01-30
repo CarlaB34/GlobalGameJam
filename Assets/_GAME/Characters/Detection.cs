@@ -21,7 +21,7 @@ public class Detection : MonoBehaviour
     private LayerMask m_RangeDetectionLayer = ~0;
 
     [System.Serializable]
-    private class DetectionSightDebugSettings
+    public class DetectionSightDebugSettings
     {
         [SerializeField]
         public Color sightRangeGizmosColor = Color.red;
@@ -43,6 +43,12 @@ public class Detection : MonoBehaviour
 
     [SerializeField]
     private DetectionSightDebugSettings m_DebugSettings = new DetectionSightDebugSettings();
+    public DetectionSightDebugSettings DebugSettings {
+        get
+        {
+            return m_DebugSettings;
+        } 
+    }
 
     private void Awake()
     {
@@ -105,7 +111,7 @@ public class Detection : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
+    public virtual void OnDrawGizmos()
     {
         // Draw the detection origin point
         Gizmos.color = m_DebugSettings.detectionOriginGizmosColor;
