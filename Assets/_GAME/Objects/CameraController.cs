@@ -19,11 +19,10 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, target.position - transform.position, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(transform.position, target.position - transform.position, out hit, Mathf.Infinity, layerMask))
         {
-            Debug.Log("Did hit: " + hit);
+            hit.collider.gameObject.GetComponent<ObjectShading>().fade();
         }
-        Debug.DrawLine(transform.position, target.position, Color.red);
     }
 
     void LateUpdate()

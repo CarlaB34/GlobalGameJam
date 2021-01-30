@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
             _Direction.Normalize();
 
             transform.position += _Direction * Time.deltaTime * _speed ;
+            transform.LookAt(transform.position - _Direction);
         }
         
     }
