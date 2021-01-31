@@ -1,62 +1,53 @@
 fileFormatVersion: 2
-guid: ed8e5048bc56fa44f88586c5c29a408a
+guid: 3d3972fc2b46e5b4bb92c4f4ecacfe32
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 2574259942719294646
-    second: Armature.001|Armature.002|Armature.001|oscour|Armature.001|oscour
+      74: 8565299355552041423
+    second: Plane.003|Plane.003|Plane.003|Armature.002|Armature.001|oscour|Armature.0
   - first:
-      74: 7174290177350252652
-    second: Armature.001|Armature.002|Armature.001|oscour|Armature.001|oscour.001
+      74: -559538626014956984
+    second: Plane.003|Plane.003|Plane.003|treeAction|Plane.003|treeAction
   - first:
-      74: -640457895620094448
-    second: Armature.001|FightIdle
+      74: 8845285473163612075
+    second: Plane.003|tree.001|tree.001|Armature.002|Armature.001|oscour|Armature.001
   - first:
-      74: 1831199847960666525
-    second: Armature.001|PlaneAction
+      74: 5333244596889155689
+    second: Plane.003|tree.001|tree.001|Armature.002|Armature.001|oscour|Armature.002
   - first:
-      74: 4804677780970903058
-    second: Armature.001|treeAction
+      74: -973819159354006194
+    second: Plane.003|tree.001|tree.001|treeAction|tree.001|treeAction
   - first:
-      74: -3930909695078030482
-    second: Armature.001|truejump
+      74: -4734833421885917402
+    second: tree.001|Plane.003|Plane.003|Armature.002|Armature.001|oscour|Armature.0
   - first:
-      74: 5730806994932295167
-    second: Armature.001|truejump.001
+      74: -6088699290959611438
+    second: tree.001|Plane.003|Plane.003|treeAction|Plane.003|treeAction
   - first:
-      74: -5255372143550973622
-    second: Armature.002|Armature.002|Armature.001|oscour|Armature.001|oscour
+      74: 3003081921240983589
+    second: tree.001|tree.001|tree.001|Armature.002|Armature.001|oscour|Armature.001
   - first:
-      74: -3072457832800338650
-    second: Armature.002|Armature.002|Armature.001|oscour|Armature.001|oscour.001
+      74: 193770538318655837
+    second: tree.001|tree.001|tree.001|Armature.002|Armature.001|oscour|Armature.002
   - first:
-      74: -5946429528186789266
-    second: Armature.002|FightIdle
+      74: -3630407969853949383
+    second: tree.001|tree.001|tree.001|treeAction|tree.001|treeAction
   - first:
-      74: -6704759074671192957
-    second: Armature.002|PlaneAction
+      74: -2092894433342333157
+    second: tree.002|Plane.003|Plane.003|Armature.002|Armature.001|oscour|Armature.0
   - first:
-      74: 7805400922352007734
-    second: Armature.002|treeAction
+      74: -3917789860600999046
+    second: tree.002|Plane.003|Plane.003|treeAction|Plane.003|treeAction
   - first:
-      74: 7266685491881012201
-    second: Armature.002|truejump
+      74: 7373327486109599094
+    second: tree.002|tree.001|tree.001|Armature.002|Armature.001|oscour|Armature.001
   - first:
-      74: 1227692817967260233
-    second: Armature.002|truejump.001
+      74: 8228276905066327612
+    second: tree.002|tree.001|tree.001|Armature.002|Armature.001|oscour|Armature.002
   - first:
-      74: -1051377653516555930
-    second: Plane.003|PlaneAction
-  - first:
-      74: 3862810585285876716
-    second: Plane.003|treeAction
-  - first:
-      74: -7430225773651443068
-    second: tree.001|PlaneAction
-  - first:
-      74: -1761947137372005412
-    second: tree.001|treeAction
+      74: 7209529106888600422
+    second: tree.002|tree.001|tree.001|treeAction|tree.001|treeAction
   externalObjects: {}
   materials:
     materialImportMode: 1
