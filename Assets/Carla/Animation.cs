@@ -13,6 +13,7 @@ public class Animation : MonoBehaviour
 
     [SerializeField]
     private PlayerAttack m_PlayerAttack = null;
+
     private static readonly int m_SpeedAnimProperties = Animator.StringToHash("speed");
     private static readonly int m_AnimPropertiesBool = Animator.StringToHash("collision");
     private static readonly int m_AnimPropertiesLife = Animator.StringToHash("life");
