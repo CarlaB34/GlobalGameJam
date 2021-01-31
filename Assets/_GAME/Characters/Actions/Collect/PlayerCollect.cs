@@ -6,6 +6,12 @@ public class PlayerCollect : MonoBehaviour
 {
 
     private CollectibleDetection m_detection;
+    [SerializeField]
+    private GameObject boss;
+
+    [SerializeField]
+    private float CD = 15f;
+    private float timer;
 
     private void Awake()
     {
@@ -16,7 +22,35 @@ public class PlayerCollect : MonoBehaviour
     {
         if (m_detection.HasActionnableInRange())
         {
-            m_detection.GetActionnableInRange().GetComponent<CollectibleController>().Collect(); ;
+            if (CollectibleController.HasObject)
+            {
+                if (boss.GetComponent<BossDetection>().HasActionnableInRange())
+                {
+                    timer = 0;
+                    GlobalVars.NbCollectibles--;
+                    Debug.Log("Give");
+                    boss.GetComponent<BossDetection>().DecreaseRange(2);
+                }
+                else
+                {
+                    EnemyShoot.IsShotEnabled = true;
+                }                
+            }
+            m_detection.GetActionnableInRange().GetComponent<CollectibleController>().Collect();
+            
+        }
+    }
+
+    private void Update()
+    {
+        if (timer < CD)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            if(!CollectibleController.HasObject)
+                EnemyShoot.IsShotEnabled = true;
         }
     }
 }
