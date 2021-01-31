@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: ed8e5048bc56fa44f88586c5c29a408a
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 2574259942719294646
+    second: Armature.001|Armature.002|Armature.001|oscour|Armature.001|oscour
+  - first:
+      74: 7174290177350252652
+    second: Armature.001|Armature.002|Armature.001|oscour|Armature.001|oscour.001
+  - first:
+      74: -640457895620094448
+    second: Armature.001|FightIdle
+  - first:
+      74: 1831199847960666525
+    second: Armature.001|PlaneAction
+  - first:
+      74: 4804677780970903058
+    second: Armature.001|treeAction
+  - first:
+      74: -3930909695078030482
+    second: Armature.001|truejump
+  - first:
+      74: 5730806994932295167
+    second: Armature.001|truejump.001
+  - first:
+      74: -5255372143550973622
+    second: Armature.002|Armature.002|Armature.001|oscour|Armature.001|oscour
+  - first:
+      74: -3072457832800338650
+    second: Armature.002|Armature.002|Armature.001|oscour|Armature.001|oscour.001
+  - first:
+      74: -5946429528186789266
+    second: Armature.002|FightIdle
+  - first:
+      74: -6704759074671192957
+    second: Armature.002|PlaneAction
+  - first:
+      74: 7805400922352007734
+    second: Armature.002|treeAction
+  - first:
+      74: 7266685491881012201
+    second: Armature.002|truejump
+  - first:
+      74: 1227692817967260233
+    second: Armature.002|truejump.001
+  - first:
+      74: -1051377653516555930
+    second: Plane.003|PlaneAction
+  - first:
+      74: 3862810585285876716
+    second: Plane.003|treeAction
+  - first:
+      74: -7430225773651443068
+    second: tree.001|PlaneAction
+  - first:
+      74: -1761947137372005412
+    second: tree.001|treeAction
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
