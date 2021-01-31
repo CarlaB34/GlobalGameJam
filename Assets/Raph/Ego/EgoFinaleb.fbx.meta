@@ -197,7 +197,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -255,7 +255,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -342,7 +342,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -371,7 +371,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -1255,29 +1255,29 @@ ModelImporter:
     - name: mixamorig:RightUpLeg
       parentName: mixamorig:Hips
       position: {x: 0.0011375743, y: -0.00055699324, z: 0.00011718959}
-      rotation: {x: 0.00003294393, y: -0.0031352602, z: 0.9998591, w: 0.01649144}
+      rotation: {x: 0.000032944004, y: -0.0031352544, z: 0.9998591, w: 0.016491447}
       scale: {x: 1.0001055, y: 1.0000012, z: 1.0000001}
     - name: mixamorig:RightLeg
       parentName: mixamorig:RightUpLeg
       position: {x: 8.1490724e-11, y: 0.0056592375, z: 1.2572854e-10}
-      rotation: {x: -0.024490394, y: -0.00061970676, z: 0.024233967, w: 0.9994061}
-      scale: {x: 1.0000007, y: 1.0000023, z: 0.9999986}
+      rotation: {x: -0.0244904, y: -0.0006197047, z: 0.024233954, w: 0.9994061}
+      scale: {x: 1.0000008, y: 1.0000023, z: 0.9999986}
     - name: mixamorig:RightFoot
       parentName: mixamorig:RightLeg
       position: {x: 9.3132255e-12, y: 0.0054738023, z: -4.598405e-11}
-      rotation: {x: 0.4954938, y: 0.078663655, z: -0.04510608, w: 0.8638654}
-      scale: {x: 1.0000014, y: 1.0000072, z: 0.99999595}
+      rotation: {x: 0.4954938, y: 0.07866363, z: -0.045106042, w: 0.8638654}
+      scale: {x: 1, y: 1.0000063, z: 0.99999535}
     - name: mixamorig:RightToeBase
       parentName: mixamorig:RightFoot
       position: {x: 1.3969838e-11, y: 0.0024980162, z: 3.678724e-10}
-      rotation: {x: 0.23052976, y: 0.05325863, z: -0.012632934, w: 0.97152454}
-      scale: {x: 1.0000229, y: 0.99998814, z: 0.9999927}
+      rotation: {x: 0.23052973, y: 0.053258657, z: -0.012632979, w: 0.9715246}
+      scale: {x: 1.0000231, y: 0.99998826, z: 0.9999926}
     - name: mixamorig:RightToe_End
       parentName: mixamorig:RightToeBase
       position: {x: -2.6625457e-12, y: 0.00080865767, z: 2.561137e-11}
-      rotation: {x: -0.00000020861623, y: -0.000009346752, z: -0.000000072643154,
+      rotation: {x: -0.00000019371507, y: -0.000009361654, z: -0.000000050291412,
         w: 1}
-      scale: {x: 1.0000045, y: 1.0000017, z: 1.0000017}
+      scale: {x: 1.0000029, y: 1.0000011, z: 1.0000011}
     - name: Ego_Plane.006_Material.002
       parentName: EgoFinaleb(Clone)
       position: {x: -0.000000005662441, y: 0.00000009614975, z: 0.0000000016391277}
