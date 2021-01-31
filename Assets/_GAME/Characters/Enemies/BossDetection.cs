@@ -11,13 +11,23 @@ public class BossDetection : Detection
     [Tooltip("Defines how far this entity can detect objects")]
     private float m_SightSecondRange = 8f;
 
+    public bool IsInRange = false;
+
+
     public void Update()
     {
         if(Vector3.Distance(player.transform.position, transform.position) < m_SightSecondRange)
         {
             Debug.Log("Player in seconde range");
             transform.LookAt(player.transform.position);
-            transform.position += -transform.forward * Time.deltaTime;
+            Vector3 vec = -transform.forward  ;
+            vec.Normalize();
+            //transform.position += vec * Time.deltaTime * 5f;
+            IsInRange = true;
+        }
+        else
+        {
+            IsInRange = false;
         }
 
         if (HasActionnableInRange())

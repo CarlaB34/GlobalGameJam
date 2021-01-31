@@ -104,6 +104,7 @@ public class PlayerAttack : MonoBehaviour
         if (!isShielded)
         {
             GlobalVars.PlayerHP -= amout;
+            Debug.Log("HP:" + GlobalVars.PlayerHP);
         }
     }
 }
