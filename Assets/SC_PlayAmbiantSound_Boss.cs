@@ -13,6 +13,8 @@ public class SC_PlayAmbiantSound_Boss : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        MusicBase.Music.Stop();
+
         Debug.Log("JE CHANGE DE MUSIQUE");
         if (other.tag == "Player" && alreadyPlayed == false)
         {
@@ -23,7 +25,7 @@ public class SC_PlayAmbiantSound_Boss : MonoBehaviour
 
         }
 
-        MusicBase.Music.Pause();
+
     }
 
 

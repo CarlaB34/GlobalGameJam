@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
     [Tooltip("The shield countdown")]
     private float ShieldCd = 3f;
 
-    private float ShieldDuration = 0f;
+    public float ShieldDuration = 0f;
     private float ShieldActualCd = 0f;
 
     [SerializeField]
@@ -56,6 +56,8 @@ public class PlayerAttack : MonoBehaviour
     private EnemyDetection m_detection;
 
     private float count = 0f;
+
+
 
     private void Awake()
     {
@@ -127,6 +129,7 @@ public class PlayerAttack : MonoBehaviour
             shield.SetActive(true);
             isShielded = true;
             IsAtack = false;
+            
         }
     }
 
