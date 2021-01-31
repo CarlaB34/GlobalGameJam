@@ -17,7 +17,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private UnityEvent m_Animaiton = new UnityEvent();
 
+    [SerializeField]
+    AudioSource StepSound;
 
+    bool alreadyactivate = false;
     public float Speed
     {
         get { return m_CurrenSpeed; }
@@ -45,13 +48,20 @@ public class PlayerMovement : MonoBehaviour
             _Direction.Normalize();
 
             transform.position += _Direction * Time.deltaTime * _speed ;
-            transform.LookAt(transform.position - _Direction);
+            transform.LookAt(transform.position - _Direction);            
             m_CurrenSpeed = _speed;
             m_Animaiton.Invoke();
+            if (alreadyactivate == false)
+            {
+                StepSound.Play();
+                alreadyactivate = true;
+            }
         }
         else
         {
             m_CurrenSpeed = 0;
+            StepSound.Stop();
+            alreadyactivate = false;
         }
         
     }

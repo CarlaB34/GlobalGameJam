@@ -20,6 +20,10 @@ public class Animation : MonoBehaviour
     private static readonly int m_PropertiesBoolDeath = Animator.StringToHash("IsDiying");
     private static readonly int m_AnimPropertiesLife = Animator.StringToHash("life");
     private static readonly int m_AnimPropertiesDamages = Animator.StringToHash("IsDamage");
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +48,6 @@ public class Animation : MonoBehaviour
              m_Anim.SetBool(m_PropertiesBoolDeath, m_PlayerAttack.IsDiying);
             Debug.Log("mort");
         }
+
     }
 }
