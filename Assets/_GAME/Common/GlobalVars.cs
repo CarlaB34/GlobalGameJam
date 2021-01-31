@@ -9,10 +9,12 @@ public class GlobalVars : MonoBehaviour
     public static int PlayerDamages = 10;
 
     public static int NbCollectibles = 0;
+    public static int NbCollectiblesMax = 0;
 
     private void Awake()
     {
-        //NbCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;       
+        NbCollectiblesMax = GameObject.FindGameObjectsWithTag("FinalCollectible").Length;
+        NbCollectibles = NbCollectiblesMax;
         
     }
 

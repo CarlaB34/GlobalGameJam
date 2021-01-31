@@ -19,6 +19,8 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     private float force = 5f;
 
+    public static bool IsShotEnabled = true;
+
     [SerializeField]
     private float fireRate = 5f;
     private float nextFire;
@@ -26,21 +28,16 @@ public class EnemyShoot : MonoBehaviour
 
     private void Update()
     {
-
-        RaycastHit hit;
-
-
-
-        
-        if (boss.GetComponent<BossDetection>().IsInRange & Physics.Raycast(fire.transform.position,player.transform.position,out hit))
+        if (boss.GetComponent<BossDetection>().IsInRange)
         {
-            if(playerPos == Vector3.zero && Time.time > nextFire)
+            if(IsShotEnabled && playerPos == Vector3.zero && Time.time > nextFire)
             {
                 nextFire += fireRate;
                 playerPos = player.transform.position;
                 GameObject proj = Instantiate(projectile, fire.transform.position, Quaternion.identity);
                 proj.GetComponent<Rigidbody>().AddForce(boss.transform.forward * force, ForceMode.VelocityChange);
                 playerPos = Vector3.zero;
+                GlobalVars.NbCollectibles = GlobalVars.NbCollectiblesMax;
             }
         }
     }

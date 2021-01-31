@@ -21,9 +21,8 @@ public class BossDetection : Detection
     {
         if(Vector3.Distance(player.transform.position, transform.position) < m_SightSecondRange)
         {
-            Debug.Log("Player in seconde range");
             transform.LookAt(player.transform.position);
-            Vector3 vec = -transform.forward  ;
+            Vector3 vec = -transform.forward;
             vec.Normalize();
             transform.position += vec * Time.deltaTime * BackSpeed;
             IsInRange = true;
@@ -46,6 +45,11 @@ public class BossDetection : Detection
         Gizmos.color = DebugSettings.sightRangeGizmosColor;
         Vector3 start = DetectionOrigin;
         Gizmos.DrawWireSphere(start, m_SightSecondRange);
+    }
+
+    public void DecreaseRange(int value)
+    {
+        m_SightSecondRange -= value;
     }
 
 }
