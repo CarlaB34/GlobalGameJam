@@ -16,7 +16,7 @@ public class PointerEgo : MonoBehaviour
     [SerializeField]
     private Transform m_Sprite;
 
-    private WaitForSeconds m_ShootDuration = new WaitForSeconds(.07f);
+    
 
 
     // Start is called before the first frame update
