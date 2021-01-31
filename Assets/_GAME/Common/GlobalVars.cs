@@ -8,13 +8,17 @@ public class GlobalVars : MonoBehaviour
     public static int PlayerHP = 100;
     public static int PlayerDamages = 10;
 
-    public static int NbCollectibles;
+    public static int NbCollectibles = 0;
+    public static int NbCollectiblesMax = 0;
 
     public static int playerHPCurrent;
     private void Awake()
     {
         NbCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
         playerHPCurrent = PlayerHP;
+        NbCollectibles = NbCollectiblesMax;
+
+        
     }
 
     private void Update()
