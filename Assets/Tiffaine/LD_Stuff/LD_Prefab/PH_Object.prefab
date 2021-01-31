@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 29318289067717364}
   - component: {fileID: 29318289067717365}
   - component: {fileID: 29318289067717366}
-  - component: {fileID: 6046930619924513804}
-  - component: {fileID: 9168855187519059708}
-  m_Layer: 11
-  m_Name: PH_Object
-  m_TagString: Collectible
+  m_Layer: 0
+  m_Name: Clef_Porte1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,40 +93,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6046930619924513804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29318289067717360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37945938db1acab498e6ee445e4e32c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Collider: {fileID: 0}
-  m_SightRange: 8
-  m_DetectionOriginOffset: {x: 0, y: 0, z: 0}
-  m_RangeDetectionLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_DebugSettings:
-    sightRangeGizmosColor: {r: 1, g: 0, b: 0, a: 1}
-    sightAngleGizmosColor: {r: 1, g: 0, b: 0, a: 1}
-    detectionOriginGizmosColor: {r: 1, g: 0, b: 1, a: 1}
-    sightAngleGizmoAngleInterval: 5
-    detectionOriginSphereRadius: 0.15
---- !u!114 &9168855187519059708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29318289067717360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 427213ccadd739e48ad566bacc265f0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 8464609024313916673, guid: 4f527f98880ab0445bbc0a71fb261a05, type: 3}
