@@ -13,15 +13,16 @@ public class Animation : MonoBehaviour
 
     [SerializeField]
     private PlayerAttack m_PlayerAttack = null;
+
     private static readonly int m_SpeedAnimProperties = Animator.StringToHash("speed");
-    private static readonly int m_AnimPropertiesBool = Animator.StringToHash("collision");
+    private static readonly int m_PropertiesBoolShield = Animator.StringToHash("isShield");
+    private static readonly int m_PropertiesBoolDeath = Animator.StringToHash("IsDiying");
     private static readonly int m_AnimPropertiesLife = Animator.StringToHash("life");
+    private static readonly int m_AnimPropertiesDamages = Animator.StringToHash("IsDamage");
     // Start is called before the first frame update
     void Start()
     {
-        //m_PlayerMove = new PlayerMovement();
 
-        // m_Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,7 +31,16 @@ public class Animation : MonoBehaviour
         Debug.Log(m_PlayerMove.Speed);
         Debug.Log(m_Anim);
         m_Anim.SetFloat(m_SpeedAnimProperties,m_PlayerMove.Speed);
-       m_Anim.SetFloat(m_AnimPropertiesBool, GlobalVars.PlayerHP);
-        m_Anim.SetBool(m_AnimPropertiesBool, m_PlayerAttack.IsShielded);
+       m_Anim.SetFloat(m_AnimPropertiesLife, GlobalVars.PlayerHP);
+        
+       m_Anim.SetBool(m_PropertiesBoolShield, m_PlayerAttack.IsShielded);
+       m_Anim.SetBool(m_AnimPropertiesDamages, m_PlayerAttack.Isdamage);
+        
+        if (GlobalVars.PlayerHP <= 0)
+        {
+            m_PlayerAttack.IsDiying = true;
+             m_Anim.SetBool(m_PropertiesBoolDeath, m_PlayerAttack.IsDiying);
+            Debug.Log("mort");
+        }
     }
 }

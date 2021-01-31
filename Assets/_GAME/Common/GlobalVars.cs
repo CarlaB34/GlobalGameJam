@@ -10,10 +10,11 @@ public class GlobalVars : MonoBehaviour
 
     public static int NbCollectibles;
 
+    public static int playerHPCurrent;
     private void Awake()
     {
         NbCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
-        
+        playerHPCurrent = PlayerHP;
     }
 
     private void Update()

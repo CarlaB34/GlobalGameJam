@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,6 +10,21 @@ public class PlayerAttack : MonoBehaviour
     {
         get { return isShielded; }
         set { isShielded = value; }
+    }
+
+    private bool isDiying = false;
+    public bool IsDiying
+    {
+        get { return isDiying; }
+        set { isDiying = value; }
+    } 
+
+    private bool IsDamage = false;
+
+    public bool Isdamage
+    {
+        get { return IsDamage; }
+        set { IsDamage = value; }
     }
 
     [SerializeField]
@@ -27,7 +43,8 @@ public class PlayerAttack : MonoBehaviour
     
     [SerializeField]
     private GameObject blade;
-
+    [SerializeField]
+    private float m_TmeEcranEnd = 6f;
 
     private EnemyDetection m_detection;
 
@@ -41,6 +58,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (isShielded)
         {
+            IsDamage = false;
             Debug.Log("Shielded");
             if(ShieldDuration < ShieldMaxDuration)
             {
@@ -72,7 +90,11 @@ public class PlayerAttack : MonoBehaviour
         {
             blade.SetActive(false);
         }
-        
+
+        isDiying = true;
+        IsDamage = false;
+        Debug.Log("cc");
+        TimeEnd(Time.deltaTime);
     }
 
     public void OnAttack()
@@ -109,7 +131,29 @@ public class PlayerAttack : MonoBehaviour
         if (!isShielded)
         {
             GlobalVars.PlayerHP -= amout;
+            IsDamage = true;
+            if(GlobalVars.PlayerHP <=0)
+            {
+                GlobalVars.PlayerHP = 0;
+                isDiying = true;
+                TimeEnd(Time.deltaTime);
+            }
             Debug.Log("HP:" + GlobalVars.PlayerHP);
         }
+        IsDamage = false;
+    }
+    public void TimeEnd(float p_DeltaTime)
+    {
+        if (isDiying == true && GlobalVars.PlayerHP <= 0)
+        {
+            m_TmeEcranEnd -= p_DeltaTime;
+
+            Debug.Log(m_TmeEcranEnd);
+            if (m_TmeEcranEnd <= 0)
+            {
+                SceneManager.LoadScene("MenuGameO");
+            }
+        }
+       // return TimeEnd(p_DeltaTime);
     }
 }
