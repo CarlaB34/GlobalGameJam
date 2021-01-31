@@ -11,9 +11,11 @@ public class GlobalVars : MonoBehaviour
     public static int NbCollectibles = 0;
     public static int NbCollectiblesMax = 0;
 
+    public static int playerHPCurrent;
     private void Awake()
     {
-        NbCollectiblesMax = GameObject.FindGameObjectsWithTag("FinalCollectible").Length;
+        NbCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
+        playerHPCurrent = PlayerHP;
         NbCollectibles = NbCollectiblesMax;
 
         

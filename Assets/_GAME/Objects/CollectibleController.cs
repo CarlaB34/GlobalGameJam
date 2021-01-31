@@ -17,6 +17,9 @@ public class CollectibleController : MonoBehaviour
     private float timer;
     private bool CDOn = false;
 
+    [SerializeField]
+    AudioSource Takeitem_Sound;
+
     private void Awake()
     {
         timer = CD;
@@ -57,6 +60,7 @@ public class CollectibleController : MonoBehaviour
         }
         else
         {
+
             if (CDOn)
             {
                 CDOn = false;

@@ -1,14 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
 {
+    
     private bool isShielded = false;
     public bool IsShielded
     {
         get { return isShielded; }
         set { isShielded = value; }
+    }
+
+    private bool isDiying = false;
+    public bool IsDiying
+    {
+        get { return isDiying; }
+        set { isDiying = value; }
+    } 
+
+    private bool IsDamage = false;
+
+    private bool IsAtack = false;
+    public bool IsAttacking
+    {
+        get { return IsAtack; }
+        set { IsAtack = value; }
+    }
+    public bool Isdamage
+    {
+        get { return IsDamage; }
+        set { IsDamage = value; }
     }
 
     [SerializeField]
@@ -27,7 +50,8 @@ public class PlayerAttack : MonoBehaviour
     
     [SerializeField]
     private GameObject blade;
-
+    [SerializeField]
+    private float m_TmeEcranEnd = 6f;
 
     private EnemyDetection m_detection;
 
@@ -41,6 +65,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (isShielded)
         {
+            IsDamage = false;
             Debug.Log("Shielded");
             if(ShieldDuration < ShieldMaxDuration)
             {
@@ -72,7 +97,11 @@ public class PlayerAttack : MonoBehaviour
         {
             blade.SetActive(false);
         }
-        
+
+        isDiying = true;
+        IsDamage = false;
+        Debug.Log("cc");
+        TimeEnd(Time.deltaTime);
     }
 
     public void OnAttack()
@@ -80,6 +109,7 @@ public class PlayerAttack : MonoBehaviour
         if (!isShielded)
         {
             blade.SetActive(true);
+            IsAtack = true;
             count = 0.3f;
             if (m_detection.HasActionnableInRange())
             {
@@ -93,10 +123,10 @@ public class PlayerAttack : MonoBehaviour
     public void OnBlock()
     {        
         if(ShieldActualCd <= 0)
-        {
-            Debug.Log("block");
+        {           
             shield.SetActive(true);
             isShielded = true;
+            IsAtack = false;
         }
     }
 
@@ -108,7 +138,30 @@ public class PlayerAttack : MonoBehaviour
         if (!isShielded)
         {
             GlobalVars.PlayerHP -= amout;
+            IsDamage = true;
+            if(GlobalVars.PlayerHP <=0)
+            {
+                GlobalVars.PlayerHP = 0;
+                isDiying = true;
+                TimeEnd(Time.deltaTime);
+            }
             Debug.Log("HP:" + GlobalVars.PlayerHP);
         }
+        IsDamage = false;
+    }
+    public void TimeEnd(float p_DeltaTime)
+    {
+        if (isDiying == true && GlobalVars.PlayerHP <= 0)
+        {
+            m_TmeEcranEnd -= p_DeltaTime;
+
+            Debug.Log(m_TmeEcranEnd);
+            if (m_TmeEcranEnd <= 0)
+            {
+                SceneManager.LoadScene("MenuGameO");
+                GlobalVars.PlayerHP = 100;
+            }
+        }
+       // return TimeEnd(p_DeltaTime);
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnemyTest
   m_EditorClassIdentifier: 
   MaxHp: 10
-  HP: 0
-  Damages: 5
+  HP: 10
+  Damages: 20
