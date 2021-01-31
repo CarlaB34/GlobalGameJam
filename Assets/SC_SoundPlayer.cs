@@ -33,18 +33,6 @@ public class SC_SoundPlayer : MonoBehaviour
         }
 
 
-
-        else if (m_PlayerMove.Speed > 0)
-        {
-            Debug.Log("JE MARCHE");
-            StepSound.Play();
-        }
-
-        else if (m_PlayerMove.Speed == 0)
-        {
-            StepSound.Stop();
-        }
-
        /* else if (m_PlayerAttack.IsAttacking == true)
         {
             ShieldActivateSound.Play();

@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class TtalkEnemy : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource NeedMoon;
+    [SerializeField]
+    AudioSource NeedBook;
+    [SerializeField]
+    AudioSource NeedCanvas;
+    [SerializeField]
+    AudioSource NeedRope;
+
+
     private bool m_isTalck = false;
     private float m_TimeTalk = 2f;
     public bool Talk
@@ -21,19 +31,33 @@ public class TtalkEnemy : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("firstphrase");
-        
-       
+        if (PlayerCollect.CurrentItem == "lune")
+        {
+            NeedMoon.Play();
+        }
+        else if (PlayerCollect.CurrentItem == "corde")
+        {
+            NeedRope.Play();
+        }
+        else if (PlayerCollect.CurrentItem == "livre")
+        {
+            NeedBook.Play();
+        }
+        else if (PlayerCollect.CurrentItem == "Cadre")
+        {
+            NeedCanvas.Play();
+        }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "FinalCollectible")
+        m_isTalck = true;
+       if (PlayerCollect.CurrentItem == "Cadre")
         {
-            //audio
-            Debug.Log("parler");
-            m_isTalck = true;
+            Debug.Log("coucou");
+            NeedCanvas.Play();
         }
-        m_isTalck = false;
     }
 }

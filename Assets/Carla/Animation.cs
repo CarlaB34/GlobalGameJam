@@ -36,8 +36,7 @@ public class Animation : MonoBehaviour
         Debug.Log(m_PlayerMove.Speed);
         Debug.Log(m_Anim);
         m_Anim.SetFloat(m_SpeedAnimProperties,m_PlayerMove.Speed);
-       m_Anim.SetFloat(m_AnimPropertiesLife, GlobalVars.PlayerHP);
-        
+       m_Anim.SetFloat(m_AnimPropertiesLife, GlobalVars.PlayerHP);        
        m_Anim.SetBool(m_PropertiesBoolShield, m_PlayerAttack.IsShielded);
        m_Anim.SetBool(m_PropertiesBoolSAtack, m_PlayerAttack.IsAttacking);
        m_Anim.SetBool(m_AnimPropertiesDamages, m_PlayerAttack.Isdamage);

@@ -17,7 +17,7 @@ public class PlayerCollect : MonoBehaviour
 
     public SO_Collectible[] list;
 
-    private string CurrentItem { get; set;}
+    public static string CurrentItem;
 
     private void Awake()
     {
@@ -78,13 +78,13 @@ public class PlayerCollect : MonoBehaviour
                 EnemyShoot.IsShotEnabled = true;
         }
 
-        if(GlobalVars.NbCollectibles <= 0)
+        /*if(GlobalVars.NbCollectibles <= 0)
         {
             win();
-        }
+        }*/
     }
 
-    public void win()
+   /* public void win()
     {
         Debug.Log("win");
         StartCoroutine(winScreen());
@@ -95,5 +95,5 @@ public class PlayerCollect : MonoBehaviour
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("MenuEndChoice");
         Debug.Log("Victoire");
-    }
+    }*/
 }

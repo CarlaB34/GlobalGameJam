@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -53,17 +54,12 @@ public class EnemyController : MonoBehaviour
             }
 
 
-        if(stats.HP <=0)
-        {
-            isDeath = true;
+            if (stats.HP <= 0)
+            {
+                isDeath = true;
+            }
         }
     }
 
-    private void Update()
-    {
-        if(stats.HP <= 0)
-        {
-            
-        }
+
     }
-}
