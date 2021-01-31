@@ -22,7 +22,13 @@ public class TtalkEnemy : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Debug.Log("firstphrase");
-        if(other.gameObject.tag == "FinalCollectible")
+        
+       
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "FinalCollectible")
         {
             //audio
             Debug.Log("parler");

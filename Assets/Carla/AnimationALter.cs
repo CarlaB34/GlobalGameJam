@@ -10,6 +10,8 @@ public class AnimationALter : MonoBehaviour
     [SerializeField]
     private TtalkEnemy m_EnemyTalk;
     [SerializeField]
+    private EnemyController m_Controle;
+    [SerializeField]
     private BossDetection m_bossDetection;
 
     private static readonly int m_SpeedAnimPropertiesWalk = Animator.StringToHash("speed");
@@ -29,8 +31,9 @@ public class AnimationALter : MonoBehaviour
     {
         //si on entre dans range on passe de idle a walk et on fait mouvoir
         m_Anim.SetBool(m_SpeedAnimProperties, m_bossDetection.IsInRange);
-        m_Anim.SetFloat(m_SpeedAnimPropertiesWalk, m_bossDetection.SpeedCurrentBosss);
+        //Sm_Anim.SetFloat(m_SpeedAnimPropertiesWalk, m_bossDetection.SpeedCurrentBosss);
         m_Anim.SetBool(m_PropertiesBoolTalk, m_EnemyTalk.Talk);
+        m_Anim.SetBool(m_PropertiesBoolDeath, m_Controle.IsDie);
         //m_Anim.SetFloat(m_AnimPropertiesLife, GlobalVars.PlayerHP);
       
         //m_Anim.SetBool(m_PropertiesBoolShield, m_PlayerAttack.IsShielded);
