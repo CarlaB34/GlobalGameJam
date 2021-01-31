@@ -14,5 +14,12 @@ public class EnemyController : MonoBehaviour
     public void Damage(int amount)
     {
         stats.HP -= amount;
+
+        Debug.Log(stats.HP);
+
+        if (stats.HP <= 0)
+        {
+            transform.gameObject.SetActive(false);
+        }
     }
 }
