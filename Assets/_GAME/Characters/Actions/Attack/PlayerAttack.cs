@@ -17,8 +17,16 @@ public class PlayerAttack : MonoBehaviour
     private float ShieldDuration = 0f;
     private float ShieldActualCd = 0f;
 
+    [SerializeField]
+    private GameObject shield;
+    
+    [SerializeField]
+    private GameObject blade;
+
 
     private EnemyDetection m_detection;
+
+    private float count = 0f;
 
     private void Awake()
     {
@@ -35,6 +43,7 @@ public class PlayerAttack : MonoBehaviour
             }
             else
             {
+                shield.SetActive(false);
                 isShielded = false;
                 ShieldDuration = 0;
                 ShieldActualCd = ShieldCd;
@@ -49,6 +58,15 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
+
+        if (count > 0)
+        {
+            count -= Time.deltaTime % 60;
+        }
+        else
+        {
+            blade.SetActive(false);
+        }
         
     }
 
@@ -56,9 +74,11 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!isShielded)
         {
+            blade.SetActive(true);
+            count = 0.3f;
             if (m_detection.HasActionnableInRange())
             {
-                Debug.Log("Attack");
+                Debug.Log("Attack");                
                 GameObject enemy = m_detection.GetActionnableInRange();
                 enemy.GetComponent<EnemyController>().Damage(GlobalVars.PlayerDamages);
                 enemy.transform.GetComponent<Rigidbody>().AddForce((enemy.transform.position - transform.position) * 3, ForceMode.Impulse);
@@ -71,6 +91,7 @@ public class PlayerAttack : MonoBehaviour
         if(ShieldActualCd <= 0)
         {
             Debug.Log("block");
+            shield.SetActive(true);
             isShielded = true;
         }
     }
@@ -83,6 +104,7 @@ public class PlayerAttack : MonoBehaviour
         if (!isShielded)
         {
             GlobalVars.PlayerHP -= amout;
+            Debug.Log("HP:" + GlobalVars.PlayerHP);
         }
     }
 }
