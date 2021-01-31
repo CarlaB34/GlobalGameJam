@@ -5,11 +5,6 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private bool isShielded = false;
-    public bool IsShielded
-    {
-        get { return isShielded; }
-        set { isShielded = value; }
-    }
 
     [SerializeField]
     [Tooltip("The shield duration")]
@@ -86,6 +81,7 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log("Attack");                
                 GameObject enemy = m_detection.GetActionnableInRange();
                 enemy.GetComponent<EnemyController>().Damage(GlobalVars.PlayerDamages);
+
                 enemy.transform.GetComponent<Rigidbody>().AddForce((enemy.transform.position - transform.position) * 3, ForceMode.Impulse);
             }
         }        
@@ -109,7 +105,14 @@ public class PlayerAttack : MonoBehaviour
         if (!isShielded)
         {
             GlobalVars.PlayerHP -= amout;
-            Debug.Log("HP:" + GlobalVars.PlayerHP);
+            Debug.Log("HP:" + GlobalVars.PlayerHP);            
+        }
+
+        if (GlobalVars.PlayerHP <= 0)
+        {
+            transform.gameObject.SetActive(false);
+            GlobalVars.PlayerHP = 100;
+
         }
     }
 }
