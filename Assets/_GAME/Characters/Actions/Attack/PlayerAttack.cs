@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private bool isShielded = false;
+    public bool IsShielded
+    {
+        get { return isShielded; }
+        set { isShielded = value; }
+    }
 
     [SerializeField]
     [Tooltip("The shield duration")]

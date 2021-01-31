@@ -11,9 +11,11 @@ public class Animation : MonoBehaviour
     [SerializeField]
     private Animator m_Anim;
 
+    [SerializeField]
+    private PlayerAttack m_PlayerAttack = null;
     private static readonly int m_SpeedAnimProperties = Animator.StringToHash("speed");
-    private static readonly int m_SpeedAnimPropertiesBool = Animator.StringToHash("collision");
-    private static readonly int m_SpeedAnimPropertiesLife = Animator.StringToHash("life");
+    private static readonly int m_AnimPropertiesBool = Animator.StringToHash("collision");
+    private static readonly int m_AnimPropertiesLife = Animator.StringToHash("life");
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class Animation : MonoBehaviour
         Debug.Log(m_PlayerMove.Speed);
         Debug.Log(m_Anim);
         m_Anim.SetFloat(m_SpeedAnimProperties,m_PlayerMove.Speed);
-        m_Anim.SetFloat(m_SpeedAnimPropertiesBool, GlobalVars.PlayerHP);
+       m_Anim.SetFloat(m_AnimPropertiesBool, GlobalVars.PlayerHP);
+        m_Anim.SetBool(m_AnimPropertiesBool, m_PlayerAttack.IsShielded);
     }
 }
