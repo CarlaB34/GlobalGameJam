@@ -124,8 +124,7 @@ public class PlayerAttack : MonoBehaviour
     public void OnBlock()
     {        
         if(ShieldActualCd <= 0)
-        {
-            Debug.Log("block");
+        {           
             shield.SetActive(true);
             isShielded = true;
             IsAtack = false;
@@ -161,6 +160,7 @@ public class PlayerAttack : MonoBehaviour
             if (m_TmeEcranEnd <= 0)
             {
                 SceneManager.LoadScene("MenuGameO");
+                GlobalVars.PlayerHP = 100;
             }
         }
        // return TimeEnd(p_DeltaTime);
