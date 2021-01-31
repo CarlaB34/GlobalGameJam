@@ -15,6 +15,7 @@ public class GlobalVars : MonoBehaviour
     {
         NbCollectiblesMax = GameObject.FindGameObjectsWithTag("FinalCollectible").Length;
         NbCollectibles = NbCollectiblesMax;
+
         
     }
 
@@ -22,8 +23,5 @@ public class GlobalVars : MonoBehaviour
     {
 
         Debug.Log("Collectibles: " + NbCollectibles);
-
     }
-
-   
 }

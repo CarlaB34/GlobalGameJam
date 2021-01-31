@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class SC_PlayNarration : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    AudioSource Voix;
+
+    bool alreadyPlayed;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player" && alreadyPlayed == false)
+        {
+            Voix = GetComponent<AudioSource>();
+            Voix.Play(0);
+            alreadyPlayed = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

@@ -31,6 +31,7 @@ public class EnemyShoot : MonoBehaviour
         if (boss.GetComponent<BossDetection>().IsInRange)
         {
             if(IsShotEnabled && playerPos == Vector3.zero && Time.time > nextFire)
+
             {
                 nextFire += fireRate;
                 playerPos = player.transform.position;

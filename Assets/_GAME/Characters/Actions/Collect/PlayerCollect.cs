@@ -13,12 +13,10 @@ public class PlayerCollect : MonoBehaviour
     private float CD = 15f;
     private float timer;
 
-
     private void Awake()
     {
         m_detection = GetComponent<CollectibleDetection>();
     }
-
 
     public void OnInteract()
     {
@@ -55,7 +53,4 @@ public class PlayerCollect : MonoBehaviour
                 EnemyShoot.IsShotEnabled = true;
         }
     }
-
-
-
 }

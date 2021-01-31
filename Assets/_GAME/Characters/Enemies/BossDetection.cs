@@ -11,9 +11,6 @@ public class BossDetection : Detection
     [Tooltip("Defines how far this entity can detect objects")]
     private float m_SightSecondRange = 8f;
 
-
-    [SerializeField]
-    float BackSpeed = 5f;
     public bool IsInRange = false;
 
 
@@ -24,7 +21,7 @@ public class BossDetection : Detection
             transform.LookAt(player.transform.position);
             Vector3 vec = -transform.forward;
             vec.Normalize();
-            transform.position += vec * Time.deltaTime * BackSpeed;
+            //transform.position += vec * Time.deltaTime * 5f;
             IsInRange = true;
         }
         else

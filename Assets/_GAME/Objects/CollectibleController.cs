@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectibleController : MonoBehaviour
 {
+
     public Transform Player;
     [SerializeField]
     private GameObject prefab;
@@ -53,8 +54,10 @@ public class CollectibleController : MonoBehaviour
                 gameObject.GetComponent<Renderer>().enabled = true;
             }
         }
+
+    public void Collect()
+    {
+        GlobalVars.NbCollectibles--;
+        Destroy(gameObject);
     }
-
-
-
 }
