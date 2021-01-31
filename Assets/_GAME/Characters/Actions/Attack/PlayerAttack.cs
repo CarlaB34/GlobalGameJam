@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
 {
+    
     private bool isShielded = false;
     public bool IsShielded
     {
@@ -21,6 +22,12 @@ public class PlayerAttack : MonoBehaviour
 
     private bool IsDamage = false;
 
+    private bool IsAtack = false;
+    public bool IsAttacking
+    {
+        get { return IsAtack; }
+        set { IsAtack = value; }
+    }
     public bool Isdamage
     {
         get { return IsDamage; }
@@ -102,6 +109,7 @@ public class PlayerAttack : MonoBehaviour
         if (!isShielded)
         {
             blade.SetActive(true);
+            IsAtack = true;
             count = 0.3f;
             if (m_detection.HasActionnableInRange())
             {
@@ -120,6 +128,7 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("block");
             shield.SetActive(true);
             isShielded = true;
+            IsAtack = false;
         }
     }
 

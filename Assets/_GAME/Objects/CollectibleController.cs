@@ -43,21 +43,22 @@ public class CollectibleController : MonoBehaviour
     private void Update()
     {
         Debug.Log(HasObject);
-        if(timer < CD)
+        if (timer < CD)
         {
             timer += Time.deltaTime;
         }
         else
         {
-            if(gameObject.GetComponent<Renderer>().enabled == false)
+            if (gameObject.GetComponent<Renderer>().enabled == false)
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
             }
         }
-
-    public void Collect()
-    {
-        GlobalVars.NbCollectibles--;
-        Destroy(gameObject);
     }
+        public void Colect()
+        {
+            GlobalVars.NbCollectibles--;
+            Destroy(gameObject);
+        }
+    
 }

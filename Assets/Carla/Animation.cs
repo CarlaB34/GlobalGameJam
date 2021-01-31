@@ -16,6 +16,7 @@ public class Animation : MonoBehaviour
 
     private static readonly int m_SpeedAnimProperties = Animator.StringToHash("speed");
     private static readonly int m_PropertiesBoolShield = Animator.StringToHash("isShield");
+    private static readonly int m_PropertiesBoolSAtack = Animator.StringToHash("isAttack");
     private static readonly int m_PropertiesBoolDeath = Animator.StringToHash("IsDiying");
     private static readonly int m_AnimPropertiesLife = Animator.StringToHash("life");
     private static readonly int m_AnimPropertiesDamages = Animator.StringToHash("IsDamage");
@@ -34,6 +35,7 @@ public class Animation : MonoBehaviour
        m_Anim.SetFloat(m_AnimPropertiesLife, GlobalVars.PlayerHP);
         
        m_Anim.SetBool(m_PropertiesBoolShield, m_PlayerAttack.IsShielded);
+       m_Anim.SetBool(m_PropertiesBoolSAtack, m_PlayerAttack.IsAttacking);
        m_Anim.SetBool(m_AnimPropertiesDamages, m_PlayerAttack.Isdamage);
         
         if (GlobalVars.PlayerHP <= 0)
