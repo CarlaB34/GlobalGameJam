@@ -13,6 +13,8 @@ public class BossDetection : Detection
 
     public bool IsInRange = false;
 
+    
+
 
     public void Update()
     {

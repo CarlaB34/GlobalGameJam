@@ -15,4 +15,12 @@ public class EnemyController : MonoBehaviour
     {
         stats.HP -= amount;
     }
+
+    private void Update()
+    {
+        if(stats.HP <= 0)
+        {
+            PlayerCollect.win();
+        }
+    }
 }
