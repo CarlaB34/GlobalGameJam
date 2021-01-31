@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6662937763981026701}
   m_Layer: 0
-  m_Name: PH_Racine03
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 8512103584915740462}
   - component: {fileID: 8512103584915740457}
   - component: {fileID: 8512103584915740456}
-  - component: {fileID: 1362407817864926056}
   m_Layer: 0
   m_Name: Statue (28)
   m_TagString: Untagged
@@ -129,20 +128,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1362407817864926056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512103584915740458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce02a583f6926543b078164e7d44f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeMin: 0.2
-  fadeTime: 1
 --- !u!1 &8512103585898321569
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +140,6 @@ GameObject:
   - component: {fileID: 8512103585898321573}
   - component: {fileID: 8512103585898321572}
   - component: {fileID: 8512103585898321575}
-  - component: {fileID: 4143967561376855386}
   m_Layer: 0
   m_Name: Statue (25)
   m_TagString: Untagged
@@ -237,20 +221,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4143967561376855386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512103585898321569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce02a583f6926543b078164e7d44f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeMin: 0.2
-  fadeTime: 1
 --- !u!1 &8512103586252796655
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +233,6 @@ GameObject:
   - component: {fileID: 8512103586252796643}
   - component: {fileID: 8512103586252796642}
   - component: {fileID: 8512103586252796653}
-  - component: {fileID: 8205785468056818731}
   m_Layer: 0
   m_Name: Statue (27)
   m_TagString: Untagged
@@ -345,20 +314,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8205785468056818731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512103586252796655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce02a583f6926543b078164e7d44f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeMin: 0.2
-  fadeTime: 1
 --- !u!1 &8512103586291181616
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +326,6 @@ GameObject:
   - component: {fileID: 8512103586291181620}
   - component: {fileID: 8512103586291181623}
   - component: {fileID: 8512103586291181622}
-  - component: {fileID: 5830413774193851349}
   m_Layer: 0
   m_Name: Statue (29)
   m_TagString: Untagged
@@ -453,20 +407,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5830413774193851349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512103586291181616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce02a583f6926543b078164e7d44f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeMin: 0.2
-  fadeTime: 1
 --- !u!1 &8512103586884051586
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +419,6 @@ GameObject:
   - component: {fileID: 8512103586884051590}
   - component: {fileID: 8512103586884051585}
   - component: {fileID: 8512103586884051584}
-  - component: {fileID: 5651251165681018811}
   m_Layer: 0
   m_Name: Statue (26)
   m_TagString: Untagged
@@ -561,17 +500,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5651251165681018811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512103586884051586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce02a583f6926543b078164e7d44f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeMin: 0.2
-  fadeTime: 1
