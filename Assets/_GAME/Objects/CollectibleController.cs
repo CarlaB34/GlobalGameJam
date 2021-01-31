@@ -15,6 +15,9 @@ public class CollectibleController : MonoBehaviour
     private float CD = 15f;
     private float timer;
 
+    [SerializeField]
+    AudioSource Takeitem_Sound;
+
     private void Awake()
     {
         timer = CD;
@@ -29,6 +32,7 @@ public class CollectibleController : MonoBehaviour
             EnemyShoot.IsShotEnabled = false;
             gameObject.GetComponent<Renderer>().enabled = false;
             timer = 0;
+            Takeitem_Sound.Play();
         }
 
         else
@@ -43,21 +47,17 @@ public class CollectibleController : MonoBehaviour
     private void Update()
     {
         Debug.Log(HasObject);
-        if(timer < CD)
+        if (timer < CD)
         {
             timer += Time.deltaTime;
         }
         else
         {
-            if(gameObject.GetComponent<Renderer>().enabled == false)
+            if (gameObject.GetComponent<Renderer>().enabled == false)
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
             }
         }
 
-    public void Collect()
-    {
-        GlobalVars.NbCollectibles--;
-        Destroy(gameObject);
     }
 }
