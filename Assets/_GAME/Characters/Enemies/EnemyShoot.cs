@@ -26,14 +26,8 @@ public class EnemyShoot : MonoBehaviour
 
     private void Update()
     {
-
-        RaycastHit hit;
-
-
-
         
-        if (boss.GetComponent<BossDetection>().IsInRange & Physics.Raycast(fire.transform.position,player.transform.position,out hit))
-        {
+        if (boss.GetComponent<BossDetection>().IsInRange){
             if(playerPos == Vector3.zero && Time.time > nextFire)
             {
                 nextFire += fireRate;
