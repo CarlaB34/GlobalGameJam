@@ -12,8 +12,20 @@ public class BossDetection : Detection
     private float m_SightSecondRange = 8f;
 
     public bool IsInRange = false;
+    public bool IsRange
+    {
+        get { return IsInRange; }
+        set { IsInRange = value; }
+    }
+    public  float Speed;
+    private float SpeedCurrent;
 
 
+    public float SpeedCurrentBosss
+    {
+        get { return SpeedCurrent; }
+        set { SpeedCurrent = value; }
+    }
     public void Update()
     {
         if(Vector3.Distance(player.transform.position, transform.position) < m_SightSecondRange)
@@ -21,7 +33,9 @@ public class BossDetection : Detection
             transform.LookAt(player.transform.position);
             Vector3 vec = -transform.forward;
             vec.Normalize();
-            //transform.position += vec * Time.deltaTime * 5f;
+            transform.position += vec * Time.deltaTime * Speed;
+          
+            SpeedCurrent = Speed;
             IsInRange = true;
         }
         else
