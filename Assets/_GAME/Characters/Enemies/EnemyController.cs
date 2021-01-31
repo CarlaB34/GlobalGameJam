@@ -58,4 +58,12 @@ public class EnemyController : MonoBehaviour
             isDeath = true;
         }
     }
+
+    private void Update()
+    {
+        if(stats.HP <= 0)
+        {
+            
+        }
+    }
 }
