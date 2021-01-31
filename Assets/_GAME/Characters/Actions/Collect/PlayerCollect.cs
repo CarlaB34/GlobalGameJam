@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollect : MonoBehaviour
 {
@@ -83,8 +84,16 @@ public class PlayerCollect : MonoBehaviour
         }
     }
 
-    public static void win()
+    public void win()
     {
+        Debug.Log("win");
+        StartCoroutine(winScreen());
+    }
+
+    IEnumerator winScreen()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("MenuEndChoice");
         Debug.Log("Victoire");
     }
 }

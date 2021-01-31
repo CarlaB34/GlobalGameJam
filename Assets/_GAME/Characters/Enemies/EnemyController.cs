@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     {
         if(stats.HP <= 0)
         {
-            PlayerCollect.win();
+            
         }
     }
 }
