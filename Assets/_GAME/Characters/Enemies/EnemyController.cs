@@ -15,8 +15,12 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField]
     AudioSource SoundBrancheHit;
+    [SerializeField]
+    AudioSource SoundDeath;
 
-    private bool isDeath = false;
+    public static bool isDeath = false;
+
+
     public bool IsDie
     {
         get { return isDeath; }
@@ -49,18 +53,33 @@ public class EnemyController : MonoBehaviour
         else
         {
 
+
             if (stats.HP <= 0)
             {
-                //SoundBrancheBreak.Play();
-                isDeath = true;
-                this.gameObject.SetActive(false);
+                GetComponent<BossDetection>().enabled = false;
+                SoundDeath.Play();
+                isDeath = true;                    
                 stats.HP = 100;
+                win();
             }
 
         }
 
-
     }
 
-    
+
+
+    public void win()
+    {
+        StartCoroutine(winScreen());
+    }
+
+    IEnumerator winScreen()
+    {
+        yield return new WaitForSeconds(6);
+        SceneManager.LoadScene("MenuEndAttack");
+        Debug.Log("Victoire");
+    }
+
+
 }

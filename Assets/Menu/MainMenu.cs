@@ -6,12 +6,24 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
+    [SerializeField]
+    GameObject Credit_Canvas;
+    [SerializeField]
+    GameObject Menu_Canvas;
+
+
     private int m_Idend = 2;
+
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Lv_Game_Ego");
-      //  soundBouton.PlayOneShot(soundBouton.clip);
-        
+       // Cursor.visible = false;
+
+
+
+        //  soundBouton.PlayOneShot(soundBouton.clip);
+
 
 
     }
@@ -26,9 +38,9 @@ public class MainMenu : MonoBehaviour
     public void Credit()
     {
         Cursor.visible = true;
+        Credit_Canvas.SetActive(true);
+        Menu_Canvas.SetActive(false);
         //soundBouton.PlayOneShot(soundBouton.clip);
-        SceneManager.LoadScene("Credit");
-
     }
 
 
@@ -48,4 +60,19 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MenuStart");
 
     }
+
+    private void Start()
+    {
+        Credit_Canvas.SetActive(false);
+        Menu_Canvas.SetActive(true);
+
+    }
+
+    public void Return()
+    {
+        Credit_Canvas.SetActive(false);
+        Menu_Canvas.SetActive(true);
+    }
+
+
 }

@@ -16,9 +16,10 @@ public class SC_Door : MonoBehaviour
             if (alreadyActivate == false)
             {
                 Destroy(other.gameObject);
-                transform.gameObject.SetActive(false);
                 SoundBrancheBreak.Play();
                 alreadyActivate = true;
+                EnemyShoot.IsShotEnabled = true;
+                transform.gameObject.SetActive(false);
             }
 
         }

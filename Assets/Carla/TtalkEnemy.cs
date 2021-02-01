@@ -29,7 +29,7 @@ public class TtalkEnemy : MonoBehaviour
             m_TimeTalk -= Time.deltaTime;
         }
     }
-    private void OnTriggerStay(Collider other)
+   /* private void OnTriggerStay(Collider other)
     {
         if (PlayerCollect.CurrentItem == "lune")
         {
@@ -49,15 +49,18 @@ public class TtalkEnemy : MonoBehaviour
         }
 
 
-    }
+    }*/
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        m_isTalck = true;
-       if (PlayerCollect.CurrentItem == "Cadre")
+        
+        if (other.gameObject.tag == "Player")
         {
-            Debug.Log("coucou");
-            NeedCanvas.Play();
+            m_isTalck = true;
+            if (PlayerCollect.CurrentItem == "Cadre")
+            {
+                NeedCanvas.Play();
+            }
         }
     }
 }
