@@ -36,30 +36,31 @@ public class EnemyController : MonoBehaviour
         if (stats.enemy_index == 0)
         {
             SoundBrancheHit.Play();
-        }
-        else
-        {
-            //ici son ennemi hitted
-        }
-
-        if (stats.HP <= 0)
-        {
-            if (stats.enemy_index == 0)
-            {
-                SoundBrancheBreak.Play();
-            }
-            else
-            {
-                //ici son ennemi mort
-            }
-
 
             if (stats.HP <= 0)
             {
+                SoundBrancheBreak.Play();
                 isDeath = true;
+                this.gameObject.SetActive(false);
+                stats.HP = 20;
             }
         }
-    }
+
+        else
+        {
+
+            if (stats.HP <= 0)
+            {
+                //SoundBrancheBreak.Play();
+                isDeath = true;
+                this.gameObject.SetActive(false);
+                stats.HP = 100;
+            }
+
+        }
 
 
     }
+
+    
+}
