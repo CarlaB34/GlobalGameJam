@@ -28,7 +28,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void Update()
     {
-        if (boss.GetComponent<BossDetection>().IsInRange)
+        if (boss.GetComponent<BossDetection>().IsInRange && !EnemyController.isDeath)
         {
             if(IsShotEnabled && playerPos == Vector3.zero && Time.time > nextFire)
 

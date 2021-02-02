@@ -62,7 +62,13 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         m_detection = GetComponent<EnemyDetection>();
+        GlobalVars.PlayerHP = 100;
     }
+
+
+
+
+
     private void Update()
     {
         if (isShielded)
@@ -102,7 +108,6 @@ public class PlayerAttack : MonoBehaviour
 
         isDiying = true;
         IsDamage = false;
-        Debug.Log("cc");
         TimeEnd(Time.deltaTime);
     }
 
@@ -158,7 +163,7 @@ public class PlayerAttack : MonoBehaviour
         {
             m_TmeEcranEnd -= p_DeltaTime;
 
-            Debug.Log(m_TmeEcranEnd);
+
             if (m_TmeEcranEnd <= 0)
             {
                 SceneManager.LoadScene("MenuGameO");

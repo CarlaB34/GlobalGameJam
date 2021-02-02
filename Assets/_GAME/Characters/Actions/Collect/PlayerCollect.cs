@@ -19,6 +19,18 @@ public class PlayerCollect : MonoBehaviour
 
     public static string CurrentItem;
 
+    [SerializeField]
+    AudioSource Cadre_Audio;
+    [SerializeField]
+    AudioSource Moon_Audio;
+    [SerializeField]
+    AudioSource Livre_Audio;
+    [SerializeField]
+    AudioSource Corde_Audio;
+
+
+
+
     private void Awake()
     {
         m_detection = GetComponent<CollectibleDetection>();
@@ -41,6 +53,25 @@ public class PlayerCollect : MonoBehaviour
                         System.Random rand = new System.Random();
                         int i = rand.Next(0, 4);
                         CurrentItem = list[i].name;
+
+                        switch (CurrentItem)
+                        {
+                            case "Cadre":
+                                Cadre_Audio.Play();
+                                break;
+                            case "corde":
+                                Corde_Audio.Play();
+                                break;
+                            case "livre":
+                                Livre_Audio.Play();
+                                break;
+                            case "lune":
+                                Moon_Audio.Play();
+                                break;
+
+                        }
+
+
                     }
                     else
                     {
@@ -78,13 +109,15 @@ public class PlayerCollect : MonoBehaviour
                 EnemyShoot.IsShotEnabled = true;
         }
 
-        /*if(GlobalVars.NbCollectibles <= 0)
+        if (GlobalVars.NbCollectibles == -4)
         {
             win();
-        }*/
+        }
+        Debug.Log(GlobalVars.NbCollectibles);
+        
     }
 
-   /* public void win()
+    public void win()
     {
         Debug.Log("win");
         StartCoroutine(winScreen());
@@ -94,6 +127,7 @@ public class PlayerCollect : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("MenuEndChoice");
-        Debug.Log("Victoire");
-    }*/
+       Debug.Log("Victoire");
+    }
+    
 }

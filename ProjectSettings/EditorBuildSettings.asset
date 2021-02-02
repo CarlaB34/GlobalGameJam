@@ -18,8 +18,11 @@ EditorBuildSettings:
     path: Assets/Menu/MenuGameO.unity
     guid: a357e6d0f22f50941a0bc39a2c3314a7
   - enabled: 1
-    path: Assets/Menu/MenuEndChoice.unity
+    path: Assets/Menu/MenuEndAttack.unity
     guid: ff14d039081ed204a88893b7a3ae8ab8
+  - enabled: 1
+    path: Assets/Menu/MenuEndChoice.unity
+    guid: f568ebe84608716468556cd26bca29aa
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

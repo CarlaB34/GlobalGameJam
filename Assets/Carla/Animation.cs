@@ -33,8 +33,6 @@ public class Animation : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        Debug.Log(m_PlayerMove.Speed);
-        Debug.Log(m_Anim);
         m_Anim.SetFloat(m_SpeedAnimProperties,m_PlayerMove.Speed);
        m_Anim.SetFloat(m_AnimPropertiesLife, GlobalVars.PlayerHP);        
        m_Anim.SetBool(m_PropertiesBoolShield, m_PlayerAttack.IsShielded);
@@ -45,7 +43,7 @@ public class Animation : MonoBehaviour
         {
             m_PlayerAttack.IsDiying = true;
              m_Anim.SetBool(m_PropertiesBoolDeath, m_PlayerAttack.IsDiying);
-            Debug.Log("mort");
+          
         }
 
     }

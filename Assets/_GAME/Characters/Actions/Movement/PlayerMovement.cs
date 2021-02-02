@@ -20,6 +20,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     AudioSource StepSound;
 
+
+    [SerializeField]
+    GameObject Ego;
+
+    [SerializeField]
+    private UnityEvent Pause = new UnityEvent();
+
     bool alreadyactivate = false;
     public float Speed
     {
@@ -38,10 +45,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Ego.transform.position = new Vector3 (transform.position.x, Ego.transform.position.y, transform.position.z);
+
 
         if (moveInputs != Vector2.zero)
         {
-            
+           
            
            Vector3 _Direction =  new Vector3(moveInputs.x, 0f, moveInputs.y);
 
@@ -65,4 +74,13 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
+
+    public void OnPause()
+    {
+
+        Pause.Invoke();
+
+    }
+
 }
