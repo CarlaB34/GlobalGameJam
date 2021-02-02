@@ -20,6 +20,10 @@ public class Animation : MonoBehaviour
     private static readonly int m_PropertiesBoolDeath = Animator.StringToHash("IsDiying");
     private static readonly int m_AnimPropertiesLife = Animator.StringToHash("life");
     private static readonly int m_AnimPropertiesDamages = Animator.StringToHash("IsDamage");
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +36,7 @@ public class Animation : MonoBehaviour
         Debug.Log(m_PlayerMove.Speed);
         Debug.Log(m_Anim);
         m_Anim.SetFloat(m_SpeedAnimProperties,m_PlayerMove.Speed);
-       m_Anim.SetFloat(m_AnimPropertiesLife, GlobalVars.PlayerHP);
-        
+       m_Anim.SetFloat(m_AnimPropertiesLife, GlobalVars.PlayerHP);        
        m_Anim.SetBool(m_PropertiesBoolShield, m_PlayerAttack.IsShielded);
        m_Anim.SetBool(m_PropertiesBoolSAtack, m_PlayerAttack.IsAttacking);
        m_Anim.SetBool(m_AnimPropertiesDamages, m_PlayerAttack.Isdamage);
@@ -44,5 +47,6 @@ public class Animation : MonoBehaviour
              m_Anim.SetBool(m_PropertiesBoolDeath, m_PlayerAttack.IsDiying);
             Debug.Log("mort");
         }
+
     }
 }

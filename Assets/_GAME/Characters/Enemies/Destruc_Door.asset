@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Destruc_Door
   m_EditorClassIdentifier: 
   MaxHp: 20
-  HP: 0
+  HP: 20
   Damages: 0
+  enemy_index: 0

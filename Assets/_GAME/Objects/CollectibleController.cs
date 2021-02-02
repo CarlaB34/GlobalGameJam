@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectibleController : MonoBehaviour
 {
+    public SO_Collectible Info;
 
     public Transform Player;
     [SerializeField]
@@ -14,6 +15,10 @@ public class CollectibleController : MonoBehaviour
     [SerializeField]
     private float CD = 15f;
     private float timer;
+    private bool CDOn = false;
+
+    [SerializeField]
+    AudioSource Takeitem_Sound;
 
     private void Awake()
     {
@@ -23,42 +28,44 @@ public class CollectibleController : MonoBehaviour
     {
         if (HasObject == false)
         {
-            GameObject clone = Instantiate(prefab, transform.position, Quaternion.identity);
-            clone.transform.parent = Player;
+            if(gameObject.tag == "FinalCollectible")
+            {
+                GameObject clone = Instantiate(prefab, transform.position, Quaternion.identity);
+                clone.tag = "Clone";
+                clone.transform.parent = Player;
+                gameObject.GetComponent<Renderer>().enabled = false;
+            }
+            else
+            {
+                transform.parent = Player;
+            }          
             HasObject = true;
             EnemyShoot.IsShotEnabled = false;
-            gameObject.GetComponent<Renderer>().enabled = false;
-            timer = 0;
         }
 
         else
         {
             this.transform.parent = null;
             HasObject = false;
-            Destroy(this.gameObject);
+            transform.parent = null;
         }
 
     }
 
     private void Update()
     {
-        Debug.Log(HasObject);
         if (timer < CD)
         {
             timer += Time.deltaTime;
         }
         else
         {
-            if (gameObject.GetComponent<Renderer>().enabled == false)
+
+            if (CDOn)
             {
+                CDOn = false;
                 gameObject.GetComponent<Renderer>().enabled = true;
             }
         }
     }
-        public void Colect()
-        {
-            GlobalVars.NbCollectibles--;
-            Destroy(gameObject);
-        }
-    
 }

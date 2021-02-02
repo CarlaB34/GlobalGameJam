@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     private int m_Idend = 2;
     public void PlayGame()
     {
-        SceneManager.LoadScene("scene2");
+        SceneManager.LoadScene("Lv_Game_Ego");
       //  soundBouton.PlayOneShot(soundBouton.clip);
         
 
@@ -38,5 +38,14 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = true;
         //soundBouton.PlayOneShot(soundBouton.clip);
         Application.Quit();
+    }
+
+
+    public void ReturnMenu()
+    {
+        Cursor.visible = true;
+        //soundBouton.PlayOneShot(soundBouton.clip);
+        SceneManager.LoadScene("MenuStart");
+
     }
 }

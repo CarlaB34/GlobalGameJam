@@ -20,6 +20,8 @@ public class BossDetection : Detection
     public  float Speed;
     private float SpeedCurrent;
 
+    
+
 
     public float SpeedCurrentBosss
     {

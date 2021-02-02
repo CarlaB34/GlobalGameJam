@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
     [Tooltip("The shield countdown")]
     private float ShieldCd = 3f;
 
-    private float ShieldDuration = 0f;
+    public float ShieldDuration = 0f;
     private float ShieldActualCd = 0f;
 
     [SerializeField]
@@ -56,6 +56,8 @@ public class PlayerAttack : MonoBehaviour
     private EnemyDetection m_detection;
 
     private float count = 0f;
+
+
 
     private void Awake()
     {
@@ -116,7 +118,6 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log("Attack");                
                 GameObject enemy = m_detection.GetActionnableInRange();
                 enemy.GetComponent<EnemyController>().Damage(GlobalVars.PlayerDamages);
-                enemy.transform.GetComponent<Rigidbody>().AddForce((enemy.transform.position - transform.position) * 3, ForceMode.Impulse);
             }
         }        
     }
@@ -124,11 +125,11 @@ public class PlayerAttack : MonoBehaviour
     public void OnBlock()
     {        
         if(ShieldActualCd <= 0)
-        {
-            Debug.Log("block");
+        {           
             shield.SetActive(true);
             isShielded = true;
             IsAtack = false;
+            
         }
     }
 
@@ -161,6 +162,7 @@ public class PlayerAttack : MonoBehaviour
             if (m_TmeEcranEnd <= 0)
             {
                 SceneManager.LoadScene("MenuGameO");
+                GlobalVars.PlayerHP = 100;
             }
         }
        // return TimeEnd(p_DeltaTime);

@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class SC_Door : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource SoundBrancheBreak;
+
+    bool alreadyActivate;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Collectible")
         {
-            Destroy(other.gameObject);
-            transform.gameObject.SetActive(false);
+            if (alreadyActivate == false)
+            {
+                Destroy(other.gameObject);
+                transform.gameObject.SetActive(false);
+                SoundBrancheBreak.Play();
+                alreadyActivate = true;
+            }
 
         }
     }
